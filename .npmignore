@@ -1,0 +1,12 @@
+# IDE config
+.idea/
+.vscode/
+
+# development
+src/
+example/
+
+.babelrc
+.eslintrc.js
+.gitignore
+webpack.config.js
