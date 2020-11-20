@@ -2,12 +2,12 @@ const path = require('path'),
       HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    devtool: 'eval-source-map',
+    devtool: 'inline-source-map',
     devServer: {
         open: true,
         port: 3000
     },
-    entry: './example/src/App.jsx',
+    entry: './src/App.jsx',
     module: {
         rules: [
             {
@@ -26,15 +26,15 @@ module.exports = {
         ]
     },
     output: {
-        path: path.resolve('example/dist'),
+        path: path.resolve('dist'),
         filename: '[name].bundle.js'
     },
     plugins: [
         new HtmlWebpackPlugin({
-            favicon: './example/src/favicon.ico',
+            favicon: './src/favicon.ico',
             filename: './index.html',
             inject: true,
-            template: './example/src/index.html'
+            template: './src/index.html'
         })
     ],
     resolve: {extensions: ['.js', '.jsx']}
