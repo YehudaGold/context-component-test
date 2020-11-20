@@ -2,12 +2,12 @@ const path = require('path'),
       HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    devtool: 'eval-source-map',
+    devtool: 'inline-source-map',
     devServer: {
         open: true,
         port: 3000
     },
-    entry: './example/src/App.jsx',
+    entry: './src/App.jsx',
     module: {
         rules: [
             {

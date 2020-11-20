@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Provider} from '../../../src';
+import {Provider} from 'context-component';
 import CounterContext from '../Contexts/CounterContext';
 import ThemeContext from '../Contexts/ThemeContext';
 import MultipleConnect from './Multiple/MultipleConnect';
