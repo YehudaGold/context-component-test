@@ -26,15 +26,15 @@ module.exports = {
         ]
     },
     output: {
-        path: path.resolve('example/dist'),
+        path: path.resolve('dist'),
         filename: '[name].bundle.js'
     },
     plugins: [
         new HtmlWebpackPlugin({
-            favicon: './example/src/favicon.ico',
+            favicon: './src/favicon.ico',
             filename: './index.html',
             inject: true,
-            template: './example/src/index.html'
+            template: './src/index.html'
         })
     ],
     resolve: {extensions: ['.js', '.jsx']}
