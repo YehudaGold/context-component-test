@@ -1,11 +1,13 @@
 const path = require('path'),
       HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = {
-    devtool: 'inline-source-map',
+module.exports = (env, options = {}) => ({
+    devtool: options.mode === 'production' ? 'source-map' : 'eval-source-map',
     devServer: {
+        host: '0.0.0.0',
         open: true,
-        port: 3000
+        port: 3000,
+        public: 'localhost:3000'
     },
     entry: './src/App.jsx',
     module: {
@@ -38,4 +40,4 @@ module.exports = {
         })
     ],
     resolve: {extensions: ['.js', '.jsx']}
-};
+});
