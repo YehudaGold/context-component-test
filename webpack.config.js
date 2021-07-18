@@ -1,13 +1,18 @@
-const path = require('path'),
-      HtmlWebpackPlugin = require('html-webpack-plugin');
+/* eslint-disable max-lines-per-function */
+const path = require('path');
+
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (env, options = {}) => ({
     devtool: options.mode === 'production' ? 'source-map' : 'eval-source-map',
     devServer: {
         host: '0.0.0.0',
+        hot: true,
+        compress: true,
         open: true,
-        port: 3000,
-        public: 'localhost:3000'
+        public: 'localhost:8080',
+        port: 8080,
+        overlay: true
     },
     entry: './src/App.jsx',
     module: {
@@ -23,7 +28,7 @@ module.exports = (env, options = {}) => ({
             },
             {
                 test: /\.(png|jpg|gif|ico|eot|svg|ttf|woff|woff2)$/u,
-                use: [{loader: 'url-loader'}]
+                type: 'asset'
             }
         ]
     },
@@ -39,5 +44,8 @@ module.exports = (env, options = {}) => ({
             template: './src/index.html'
         })
     ],
-    resolve: {extensions: ['.js', '.jsx']}
+    resolve: {
+        extensions: ['.js', '.jsx'],
+        symlinks: false
+    }
 });
