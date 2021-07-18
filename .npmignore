@@ -6,7 +6,11 @@
 src/
 example/
 
+# Ignore package artifacts
+*.tgz
+
 .babelrc
 .eslintrc.js
 .gitignore
+rollup.config.js
 webpack.config.js
